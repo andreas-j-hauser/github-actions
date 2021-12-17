@@ -26,4 +26,8 @@ jobs:
     - name: flake8
       run: flake8
     - name: pytest
-      run: pytest --cov
+      run: pytest --cov --cov-report=html
+    - uses: actions/upload-artifact@v2
+      with:
+        name: coverage_${{ matrix.os }}_${{ matrix.python-version }}
+        path: htmlcov 
