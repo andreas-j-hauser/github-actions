@@ -25,4 +25,4 @@ jobs:
     - name: flake8
       run: flake8
     - name: pytest
-      run: pytest --cov-report=html
+      run: pytest --cov
