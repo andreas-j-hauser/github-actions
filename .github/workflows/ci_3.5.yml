@@ -22,7 +22,5 @@ jobs:
       run: isort --check --diff .
     - name: black
       run: black --check --diff .
-    - name: flake8
-      run: flake8
     - name: pytest
       run: pytest --cov
