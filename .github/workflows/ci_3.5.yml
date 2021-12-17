@@ -23,7 +23,5 @@ jobs:
         pip freeze
     - name: isort
       run: isort --check --diff .
-    - name: black
-      run: black --check --diff .
     - name: pytest
       run: pytest --cov
