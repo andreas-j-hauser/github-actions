@@ -1,5 +1,5 @@
 name: CI Python <=3.5
-on: [workflow_dispatch, push, pull_request]
+on: [workflow_dispatch]
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -17,7 +17,10 @@ jobs:
     - name: Install dependencies
       run: |
         pip install --upgrade pip setuptools
-        pip install -r requirements.txt
+        pip install isort
+        pip install pytest
+        pip install pytest-cov
+        pip freeze
     - name: isort
       run: isort --check --diff .
     - name: black
